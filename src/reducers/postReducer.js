@@ -14,10 +14,15 @@ export default function(state = initialState, action){
     switch(action.type){
         case FETCH_POSTS:
             console.log('reducer');
-            return{
+            return {
                 ...state,
                 items: action.payload,      // .payload is the variable name from the postActions file that we named in the dispatch function
-            }
+            };
+        case NEW_POST:
+            return{
+                ...state,
+                item: action.payload,
+            };
         default:
             return state;
     }
